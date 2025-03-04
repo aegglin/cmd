@@ -1,5 +1,9 @@
 use std::io;
 
+fn echo(cmd: &str) {
+    println!("{cmd}");
+}
+
 fn main() {
     println!("Hello, welcome to Rust cmd.");
 
@@ -9,7 +13,5 @@ fn main() {
         .read_line(&mut cmd)
         .expect("Command did not match any known commands.");
 
-    let input: String = match cmd.trim().parse() {
-        Ok(s) => s,
-    };
+    echo(&cmd);
 }
